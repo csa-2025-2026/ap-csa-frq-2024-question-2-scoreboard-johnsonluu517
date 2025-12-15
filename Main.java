@@ -1,3 +1,72 @@
+public class Scoreboard {
+
+private int turn = 1;
+private String name1;
+private String name2;
+private int team1points = 0;
+private int team2points = 0;
+
+public Scoreboard (String iname1, String iname2)
+ {
+    name1 = iname1;
+    name2 = iname2;
+ }
+public void recordPlay(int points)
+{
+    if (turn == 1)
+    {
+        if (points >= 1)
+        {
+            team1points = team1points + points;
+        }
+
+        else 
+        {
+            turn++;
+        }
+    }
+
+    if (turn == 2)
+    {
+        if (points >= 1)
+        {
+            team2points = team2points + points;
+        }
+
+        else 
+        {
+            turn++;
+        }
+    }
+
+}
+
+public String getScore ()
+{
+    if (turn == 1)
+    {
+    return (team1points + "-" + team2points + "-" + name1);
+    }
+
+    if (turn == 2)
+    {
+    return (team1points + "-" + team2points + "-" + name2);
+    }
+    else 
+    {
+    return ("error");
+    }
+}
+
+}
+
+
+
+
+
+
+
+
 public class Main {
     public static void main(String[] args) {
         
